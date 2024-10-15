@@ -241,9 +241,7 @@ class SimplePuzzleTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return PuzzleTitle(
       key: puzzleTitleKey,
-      title: status == PuzzleStatus.complete
-          ? context.l10n.puzzleCompleted
-          : context.l10n.puzzleChallengeTitle,
+      title: status == PuzzleStatus.complete ? context.l10n.puzzleCompleted : context.l10n.puzzleChallengeTitle,
     );
   }
 }
@@ -326,7 +324,7 @@ class SimplePuzzleTile extends StatelessWidget {
 
     return TextButton(
       style: TextButton.styleFrom(
-        primary: PuzzleColors.white,
+        backgroundColor: PuzzleColors.white,
         textStyle: PuzzleTextStyle.headline2.copyWith(
           fontSize: tileFontSize,
         ),
@@ -349,9 +347,7 @@ class SimplePuzzleTile extends StatelessWidget {
           },
         ),
       ),
-      onPressed: state.puzzleStatus == PuzzleStatus.incomplete
-          ? () => context.read<PuzzleBloc>().add(TileTapped(tile))
-          : null,
+      onPressed: state.puzzleStatus == PuzzleStatus.incomplete ? () => context.read<PuzzleBloc>().add(TileTapped(tile)) : null,
       child: Text(
         tile.value.toString(),
         semanticsLabel: context.l10n.puzzleTileLabelText(

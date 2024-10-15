@@ -110,8 +110,7 @@ class _DashatarShareButtonState extends State<DashatarShareButton> {
   @override
   void initState() {
     super.initState();
-    _audioPlayer = widget._audioPlayerFactory()
-      ..setAsset('assets/audio/click.mp3');
+    _audioPlayer = widget._audioPlayerFactory()..setAsset('assets/audio/click.mp3');
   }
 
   @override
@@ -133,7 +132,7 @@ class _DashatarShareButtonState extends State<DashatarShareButton> {
         child: TextButton(
           style: TextButton.styleFrom(
             padding: EdgeInsets.zero,
-            primary: widget.color,
+            foregroundColor: widget.color,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(32),
             ),
